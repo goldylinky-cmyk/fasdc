@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Filipinas Asia Shutter Door Corporation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles for the new product layout */
+        .product-hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 61, 130, 0.9));
+            color: white;
+            text-align: center;
+            padding: 80px 20px 60px;
+            margin-top: 70px;
+        }
+        
+        .product-hero h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .product-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .product-category {
+            margin: 60px 0;
+            padding: 40px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .product-category:last-child {
+            border-bottom: none;
+        }
+        
+        .category-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            height: 250px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .image-placeholder {
+            color: #6c757d;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .image-placeholder i {
+            font-size: 4rem;
+            color: #adb5bd;
+            margin-bottom: 15px;
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .product-content p {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .product-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .product-features i {
+            color: #28a745;
+            margin-right: 10px;
+        }
+        
+        .product-cta {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .product-cta:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-door-closed"></i></div>
+                    <div class="logo-text">
+                        <span class="logo-main">FILIPINAS ASIA</span>
+                        <span class="logo-sub">Shutter Door Corporation</span>
+                    </div>
+                </a>
+                <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html#quote" class="nav-cta btn">Get Quote</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Product Hero -->
+        <section class="product-hero">
+            <div class="container">
+                <h1>FASDC Premium Door Solutions</h1>
+                <p>Superior quality metal doors, shutters, and architectural solutions made in the Philippines for durability, safety, and elegance.</p>
+            </div>
+        </section>
+
+        <!-- Roll-Up Doors Category -->
+        <section class="product-category">
+            <div class="container">
+                <h2 class="category-title">Roll-Up Doors & Grilles</h2>
+                
+                <div class="products-grid">
+                    <!-- Roll-Up Shutter Doors -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-arrow-up"></i>
+                                <p>Roll-Up Shutter Door Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Roll-Up Shutter Doors</h3>
+                            <p>FAS Roll-Up Doors are made from galvanized aluminum curtains designed to give you maximum security and durability. Customized to save space and reduce weight, suited for residential, industrial and commercial purposes.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Galvanized aluminum construction</li>
+                                <li><i class="fas fa-check"></i> Space-saving design</li>
+                                <li><i class="fas fa-check"></i> Lightweight yet durable</li>
+                                <li><i class="fas fa-check"></i> Residential, industrial & commercial use</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Roll-Up Grilles -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-th"></i>
+                                <p>Roll-Up Grille Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Roll-Up Grilles</h3>
+                            <p>Our grilles are made with beautifully designed tubes and links of high quality. The grilles provide efficient air circulation, with an excellent finish for maximum view from the outside.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> High-quality tubes and links</li>
+                                <li><i class="fas fa-check"></i> Excellent air circulation</li>
+                                <li><i class="fas fa-check"></i> Maximum visibility</li>
+                                <li><i class="fas fa-check"></i> Premium finish</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Polycarbonate Roll-Up -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-eye"></i>
+                                <p>Polycarbonate Roll-Up Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Polycarbonate Roll-Up Shutter</h3>
+                            <p>Strong as steel, clear as glass. Our FAS Polycarbonate Roll-Up Shutter Doors feature clear transparency to provide high visibility for many years.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Steel-like strength</li>
+                                <li><i class="fas fa-check"></i> Glass-like clarity</li>
+                                <li><i class="fas fa-check"></i> Long-lasting transparency</li>
+                                <li><i class="fas fa-check"></i> High visibility design</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Noiseless Roll-Up -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-volume-mute"></i>
+                                <p>Noiseless Roll-Up Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Noiseless Roll-Up Shutter</h3>
+                            <p>Stability, strength, and elegance, rolled into one. Features soft start and soft stop for smoother operation. Covered with rubber end locks on both ends for smoother shutter motion.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Quiet operation</li>
+                                <li><i class="fas fa-check"></i> Soft start & stop</li>
+                                <li><i class="fas fa-check"></i> Rubber end locks</li>
+                                <li><i class="fas fa-check"></i> Smooth motion</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metal Doors Category -->
+        <section class="product-category" style="background: #f8f9fa;">
+            <div class="container">
+                <h2 class="category-title">Metal & Security Doors</h2>
+                
+                <div class="products-grid">
+                    <!-- Metal Door -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-shield-alt"></i>
+                                <p>Metal Door Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Metal Door</h3>
+                            <p>Both soundproof and fire-resistant, made from galvanized metal on high quality carbon-steel sheets with your choice of honeycomb, fiberglass or rock wool insulation. Guarantees superior durability, safety, and security.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Soundproof & fire-resistant</li>
+                                <li><i class="fas fa-check"></i> Galvanized metal construction</li>
+                                <li><i class="fas fa-check"></i> Multiple insulation options</li>
+                                <li><i class="fas fa-check"></i> Carbon-steel reinforcement</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Bulletproof Door -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-crosshairs"></i>
+                                <p>Bulletproof Door Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Bulletproof Door</h3>
+                            <p>Designed as the ultimate high security screen, fully or partially glazed. Comes in flexible dimensions that can extend from an existing floor level to the underside of an existing ceiling height.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Ultimate security protection</li>
+                                <li><i class="fas fa-check"></i> Fully or partially glazed</li>
+                                <li><i class="fas fa-check"></i> Flexible dimensions</li>
+                                <li><i class="fas fa-check"></i> Custom height options</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Louver & Glass Category -->
+        <section class="product-category">
+            <div class="container">
+                <h2 class="category-title">Louver Doors & Glass Solutions</h2>
+                
+                <div class="products-grid">
+                    <!-- Metal Louvers -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-wind"></i>
+                                <p>Metal Louver Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Metal Louver Doors & Windows</h3>
+                            <p>FAS Louver Doors and Windows are designed for durability, safety and maximum airflow. Perfect for areas requiring ventilation without compromising security.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Maximum airflow design</li>
+                                <li><i class="fas fa-check"></i> Durable metal construction</li>
+                                <li><i class="fas fa-check"></i> Enhanced security features</li>
+                                <li><i class="fas fa-check"></i> Weather-resistant</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Glass Door and Window -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-glass-whiskey"></i>
+                                <p>Glass Door Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>Glass Doors & Windows</h3>
+                            <p>Aside from allowing an enormous amount of natural light, it also provides high visibility and clarity to bring brightness and beauty into any space.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Maximum natural light</li>
+                                <li><i class="fas fa-check"></i> High visibility & clarity</li>
+                                <li><i class="fas fa-check"></i> Aesthetic appeal</li>
+                                <li><i class="fas fa-check"></i> Space brightening</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Balustrade Category -->
+        <section class="product-category" style="background: #f8f9fa;">
+            <div class="container">
+                <h2 class="category-title">Architectural Elements</h2>
+                
+                <div class="products-grid">
+                    <!-- Balustrade -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-grip-lines"></i>
+                                <p>Balustrade Image</p>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3>FAS Balustrade</h3>
+                            <p>More resistant to corrosion & rust than ordinary steel. FAS Balustrades are well-built, durable, and can be bent into different shapes to form any architectural designs for your home or business.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Superior corrosion resistance</li>
+                                <li><i class="fas fa-check"></i> Custom bendable shapes</li>
+                                <li><i class="fas fa-check"></i> Architectural flexibility</li>
+                                <li><i class="fas fa-check"></i> Residential & commercial use</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="background: var(--primary); color: white; padding: 60px 0; text-align: center;">
+            <div class="container">
+                <h2 style="color: white; margin-bottom: 20px;">Need Custom Solutions?</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto 30px;">
+                    All our products can be customized to your specific requirements. Contact us for tailored solutions.
+                </p>
+                <a href="contact.html" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.1rem;">
+                    <i class="fas fa-phone-alt"></i> Contact Our Sales Team
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <div class="logo-icon"><i class="fas fa-door-closed"></i></div>
+                        <div class="logo-text">
+                            <span class="logo-main">FILIPINAS ASIA</span>
+                            <span class="logo-sub">Shutter Door Corporation</span>
+                        </div>
+                    </div>
+                    <p>Manufacturing quality industrial and commercial doors in the Philippines since 1990.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> KM. 23 Ortigas Ave. Ext., Cainta, Rizal</p>
+                    <p><i class="fas fa-phone"></i> (02) 655-1501</p>
+                    <p><i class="fas fa-envelope"></i> info@filipinasasia.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Filipinas Asia Shutter Door Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

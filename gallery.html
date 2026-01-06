@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery | Filipinas Asia Shutter Door Corporation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-door-closed"></i></div>
+                    <div class="logo-text">
+                        <span class="logo-main">FILIPINAS ASIA</span>
+                        <span class="logo-sub">Shutter Door Corporation</span>
+                    </div>
+                </a>
+                <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html#quote" class="nav-cta btn">Get Quote</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Project Gallery</h1>
+                <p>See our shutter door installations across the Philippines</p>
+            </div>
+        </section>
+
+        <!-- Gallery Filter -->
+        <section class="section">
+            <div class="container">
+                <div class="gallery-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="industrial">Industrial</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="residential">Residential</button>
+                    <button class="filter-btn" data-filter="fire-rated">Fire-Rated</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+                    <!-- Industrial Projects -->
+                    <div class="gallery-item industrial" data-category="industrial">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-warehouse"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Warehouse Rolling Shutter</h3>
+                            <p>Motorized rolling shutter for a logistics warehouse in Laguna.</p>
+                            <span class="project-type">Industrial</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item industrial" data-category="industrial">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Factory Sectional Door</h3>
+                            <p>Large sectional door for a manufacturing plant in Cavite.</p>
+                            <span class="project-type">Industrial</span>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Projects -->
+                    <div class="gallery-item commercial" data-category="commercial">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-store"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Shopping Mall Security</h3>
+                            <p>Rolling grilles for retail stores in a Metro Manila mall.</p>
+                            <span class="project-type">Commercial</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item commercial" data-category="commercial">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Office Building</h3>
+                            <p>Main entrance doors for a corporate office in Makati.</p>
+                            <span class="project-type">Commercial</span>
+                        </div>
+                    </div>
+
+                    <!-- Residential Projects -->
+                    <div class="gallery-item residential" data-category="residential">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Residential Garage Door</h3>
+                            <p>Custom sectional garage door for a luxury home in Quezon City.</p>
+                            <span class="project-type">Residential</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item residential" data-category="residential">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-door-closed"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Condominium Security</h3>
+                            <p>Security shutters for a high-rise condominium in Taguig.</p>
+                            <span class="project-type">Residential</span>
+                        </div>
+                    </div>
+
+                    <!-- Fire-Rated Projects -->
+                    <div class="gallery-item fire-rated" data-category="fire-rated">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Hospital Fire Doors</h3>
+                            <p>2-hour fire-rated doors for a medical facility in Pasig.</p>
+                            <span class="project-type">Fire-Rated</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item fire-rated" data-category="fire-rated">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-school"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>School Building Safety</h3>
+                            <p>Fire-rated shutters for classroom corridors in a university.</p>
+                            <span class="project-type">Fire-Rated</span>
+                        </div>
+                    </div>
+
+                    <!-- Additional Projects -->
+                    <div class="gallery-item industrial" data-category="industrial">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-truck-loading"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Loading Dock Doors</h3>
+                            <p>High-speed doors for a distribution center in Bulacan.</p>
+                            <span class="project-type">Industrial</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item commercial" data-category="commercial">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Restaurant Security</h3>
+                            <p>Folding grilles for a restaurant chain in Metro Manila.</p>
+                            <span class="project-type">Commercial</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item industrial" data-category="industrial">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-oil-can"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Chemical Plant Doors</h3>
+                            <p>Corrosion-resistant doors for a chemical processing facility.</p>
+                            <span class="project-type">Industrial</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item residential" data-category="residential">
+                        <div class="gallery-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-swimming-pool"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Residential Pool Enclosure</h3>
+                            <p>Custom shutters for a pool area in an exclusive village.</p>
+                            <span class="project-type">Residential</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonials -->
+        <section class="section light-bg">
+            <div class="container">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Feedback from businesses we've worked with</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The industrial shutters installed at our warehouse have been reliable for 5 years now. Excellent durability and after-sales support."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Logistics Manager</h4>
+                            <p>Distribution Company, Laguna</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Their fire-rated doors helped us pass building inspection smoothly. Professional installation and proper certification."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Property Developer</h4>
+                            <p>Real Estate Firm, Makati</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Custom fabrication for our unusual storefront dimensions was handled perfectly. The grilles operate smoothly every day."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Retail Store Owner</h4>
+                            <p>Shopping Mall, Quezon City</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <div class="logo-icon"><i class="fas fa-door-closed"></i></div>
+                        <div class="logo-text">
+                            <span class="logo-main">FILIPINAS ASIA</span>
+                            <span class="logo-sub">Shutter Door Corporation</span>
+                        </div>
+                    </div>
+                    <p>Manufacturing quality industrial and commercial doors in the Philippines since 1990.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> KM. 23 Ortigas Ave. Ext., Cainta, Rizal</p>
+                    <p><i class="fas fa-phone"></i> (02) 655-1501</p>
+                    <p><i class="fas fa-envelope"></i> info@filipinasasia.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Filipinas Asia Shutter Door Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <!-- Gallery-specific JavaScript -->
+    <script>
+        // Gallery Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide gallery items based on filter
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Initialize gallery items with animation
+            galleryItems.forEach((item, index) => {
+                item.style.transition = 'all 0.3s ease';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, index * 50);
+            });
+        });
+    </script>
+</body>
+</html>

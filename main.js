@@ -1,15 +1,11 @@
-// Main JavaScript for FASDC Website
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===== MOBILE NAVIGATION TOGGLE =====
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
-            
-            // Change icon based on menu state
+        
             const icon = navToggle.querySelector('i');
             if (navMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -20,40 +16,89 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // ===== SMOOTH SCROLLING FOR ANCHOR LINKS =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    // ===== SMOOTH SCROLLING FOR ANCHOR LINKS (robust) =====
+document.querySelectorAll('a[href*="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        // Resolve absolute URL so we can compare paths reliably
+        const url = new URL(href, window.location.href);
+        if (!url.hash) return;
+        if (url.origin !== window.location.origin) return;
+
+        const linkPath = url.pathname.replace(/\/?$/, '');
+        const currentPath = window.location.pathname.replace(/\/?$/, '');
+        if (linkPath !== currentPath) return;
+
+        const targetId = url.hash;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (navMenu && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
+
+            window.scrollTo({
+                top: targetElement.offsetTop - 80, // adjust -80 to match your header height
+                behavior: 'smooth'
+            });
+
+            // Update address bar without jump
+            history.pushState(null, '', targetId);
+
+            // Close mobile menu if open
+            if (typeof navMenu !== 'undefined' && navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (navToggle) {
                     const icon = navToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 }
             }
-        });
+        }
     });
+});
+
+// Smooth-scroll on page load if URL has a hash
+if (window.location.hash) {
+    const targetOnLoad = document.querySelector(window.location.hash);
+    if (targetOnLoad) {
+        setTimeout(() => {
+            window.scrollTo({
+                top: targetOnLoad.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }, 50);
+    }
+}
+
+    let lastScroll = 0;
+    const navbar = document.querySelector('.navbar');
+    const pageHeader = document.querySelector('.page-header');
+
+    window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const headerHeight = pageHeader ? pageHeader.offsetHeight : 0;
     
-    // ===== UPDATE COPYRIGHT YEAR =====
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        // Scroll down - hide navbar
+        navbar.style.transform = 'translateY(-100%)';
+    } else if (currentScroll < (headerHeight + 100)) {
+        // Near page header - show navbar
+        navbar.style.transform = 'translateY(0)';
+    } else if (currentScroll < lastScroll) {
+        // Scroll up (but not near header) - show navbar
+        navbar.style.transform = 'translateY(0)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
     const currentYear = document.getElementById('currentYear');
     if (currentYear) {
         currentYear.textContent = new Date().getFullYear();
     }
-    
-    // ===== SET ACTIVE NAV LINK BASED ON CURRENT PAGE =====
+
     function setActiveNavLink() {
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const navLinks = document.querySelectorAll('.nav-link');
@@ -70,14 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     setActiveNavLink();
-    
-    // ===== SIMPLE FORM VALIDATION (for contact page) =====
+
     const quoteForm = document.getElementById('quoteForm');
     if (quoteForm) {
         quoteForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simple validation
             const inputs = this.querySelectorAll('input[required], select[required], textarea[required]');
             let isValid = true;
             
@@ -85,8 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!input.value.trim()) {
                     isValid = false;
                     input.style.borderColor = '#dc3545';
-                    
-                    // Add error message
+                   
                     if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error-message')) {
                         const errorMsg = document.createElement('small');
                         errorMsg.classList.add('error-message');
@@ -99,7 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     input.style.borderColor = '#ddd';
                     
-                    // Remove error message if exists
                     if (input.nextElementSibling && input.nextElementSibling.classList.contains('error-message')) {
                         input.nextElementSibling.remove();
                     }
@@ -107,14 +148,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             if (isValid) {
-                // In a real application, you would send this data to a server
                 alert('Thank you for your quote request! We will contact you within 24 hours.');
                 quoteForm.reset();
             }
         });
     }
     
-    // ===== SIMPLE IMAGE GALLERY (for gallery page) =====
     const galleryItems = document.querySelectorAll('.gallery-item');
     if (galleryItems.length > 0) {
         galleryItems.forEach(item => {

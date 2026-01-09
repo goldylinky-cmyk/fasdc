@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('navMenu');
     
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             navMenu.classList.toggle('active');
         
             const icon = navToggle.querySelector('i');
@@ -14,6 +16,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+        // Close menu when a nav link is clicked
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
         });
     }
     // ===== SMOOTH SCROLLING FOR ANCHOR LINKS (robust) =====
@@ -190,6 +216,37 @@ if (window.location.hash) {
             });
         });
         
+        // Image cycling on hover
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        const imageTrack = card.querySelector('.image-track');
+        const images = card.querySelectorAll('.project-image-carousel img');
+        
+        if (images.length > 1) {
+            let currentImage = 0;
+            let interval;
+            
+            // Start cycling on hover
+            card.addEventListener('mouseenter', () => {
+                interval = setInterval(() => {
+                    currentImage = (currentImage + 1) % images.length;
+                    imageTrack.style.transform = `translateX(-${currentImage * (100 / images.length)}%)`;
+                }, 2000); // Change image every 2 seconds
+            });
+            
+            // Stop cycling on mouse leave
+            card.addEventListener('mouseleave', () => {
+                clearInterval(interval);
+                // Reset to first image
+                currentImage = 0;
+                imageTrack.style.transform = 'translateX(0)';
+            });
+        }
+    });
+});
+
         // Add lightbox styles dynamically
         const lightboxStyles = `
             .lightbox {
@@ -241,4 +298,156 @@ if (window.location.hash) {
         styleSheet.textContent = lightboxStyles;
         document.head.appendChild(styleSheet);
     }
+});
+
+// ===== SIMPLE CAROUSEL THAT WILL WORK =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded, initializing carousels...');
+    
+    // Find all carousel containers
+    const carousels = document.querySelectorAll('.project-image');
+    
+    if (carousels.length === 0) {
+        console.log('No carousels found on this page');
+        return;
+    }
+    
+    console.log('Found', carousels.length, 'carousel(s)');
+    
+    carousels.forEach((carouselContainer, index) => {
+        console.log('Setting up carousel', index + 1);
+        
+        const track = carouselContainer.querySelector('.image-track');
+        const images = track.querySelectorAll('img');
+        const dots = carouselContainer.querySelectorAll('.carousel-dot');
+        
+        if (images.length <= 1) {
+            console.log('Only 1 image, no carousel needed');
+            return; // Skip if only one image
+        }
+        
+        let currentIndex = 0;
+        const totalImages = images.length;
+        
+        // 1. First, fix the display issue
+        track.style.display = 'flex';
+        track.style.transition = 'transform 0.5s ease';
+        
+        // 2. Set initial widths properly
+        function updateTrackWidth() {
+            const containerWidth = carouselContainer.offsetWidth;
+            console.log('Container width:', containerWidth);
+            
+            // Set total track width
+            track.style.width = `${containerWidth * totalImages}px`;
+            
+            // Set each image width
+            images.forEach(img => {
+                img.style.width = `${containerWidth}px`;
+                img.style.flexShrink = '0';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+            });
+            
+            // Move to current slide
+            moveToSlide(currentIndex);
+        }
+        
+        // 3. Function to move to a specific slide
+        function moveToSlide(slideIndex) {
+            const containerWidth = carouselContainer.offsetWidth;
+            track.style.transform = `translateX(-${slideIndex * containerWidth}px)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === slideIndex);
+            });
+            
+            currentIndex = slideIndex;
+        }
+        
+        // 4. Click handlers for dots
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', function() {
+                console.log('Clicked dot', i);
+                moveToSlide(i);
+                
+                // Restart auto-rotate after manual click
+                if (autoRotateInterval) {
+                    clearInterval(autoRotateInterval);
+                    startAutoRotate();
+                }
+            });
+        });
+        
+        // 5. Auto-rotate functionality
+        let autoRotateInterval;
+        
+        function startAutoRotate() {
+            if (autoRotateInterval) clearInterval(autoRotateInterval);
+            
+            autoRotateInterval = setInterval(() => {
+                let nextIndex = (currentIndex + 1) % totalImages;
+                moveToSlide(nextIndex);
+            }, 3000); // Change every 3 seconds
+        }
+        
+        // Pause on hover
+        carouselContainer.addEventListener('mouseenter', () => {
+            if (autoRotateInterval) {
+                clearInterval(autoRotateInterval);
+            }
+        });
+        
+        // Resume on mouse leave
+        carouselContainer.addEventListener('mouseleave', () => {
+            startAutoRotate();
+        });
+        
+        // 6. Initialize everything when images load
+        let loadedCount = 0;
+        
+        images.forEach(img => {
+            // Check if image is already loaded
+            if (img.complete) {
+                loadedCount++;
+                console.log('Image already loaded:', img.src);
+            } else {
+                img.addEventListener('load', () => {
+                    loadedCount++;
+                    console.log('Image loaded:', img.src);
+                    
+                    if (loadedCount === totalImages) {
+                        console.log('All images loaded, initializing carousel');
+                        updateTrackWidth();
+                        startAutoRotate();
+                    }
+                });
+                
+                img.addEventListener('error', () => {
+                    loadedCount++;
+                    console.error('Failed to load image:', img.src);
+                    img.style.backgroundColor = '#e0e0e0'; // Gray fallback
+                    
+                    if (loadedCount === totalImages) {
+                        console.log('All images processed, initializing carousel');
+                        updateTrackWidth();
+                        startAutoRotate();
+                    }
+                });
+            }
+        });
+        
+        // If all images are already loaded
+        if (loadedCount === totalImages) {
+            console.log('All images were already loaded');
+            updateTrackWidth();
+            startAutoRotate();
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', updateTrackWidth);
+    });
+    
+    console.log('Carousel setup complete');
 });

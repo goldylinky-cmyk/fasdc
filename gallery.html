@@ -7,222 +7,47 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Gallery Hero - matches product hero styling */
-        .gallery-hero {
-            background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(37, 122, 74, 0.8)), url('../Assets/header-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: rgb(255, 255, 255);
-            text-align: center;
-            padding: 80px 20px 60px;
-            margin-top: 70px;
-        }
-        
-        .gallery-hero h1 {
-            color: rgb(250, 250, 250);
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .gallery-hero p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        /* Gallery Section */
-        .gallery-section {
-            margin: 60px 0;
-            padding: 40px 0;
-        }
-        
-        .gallery-title {
-            text-align: center;
-            color: black;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .gallery-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: #2e8b57;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        /* Project Card - matches product-card styling */
-        .project-card {
-            background: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
-        }
-        
-        .project-image {
-            height: 250px;
-            background: #000000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 3px solid #2e8b57;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-        
-        .image-track {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            transition: transform 0.5s ease;
-            pointer-events: none;
-        }
-        
-        .image-track img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        
-        .project-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-content h3 {
-            color: #2e8b57;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .project-content p {
-            color: #495057;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .project-details {
-            margin-top: 15px;
-            flex-grow: 1;
-        }
-        
-        .detail {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-        
-        .detail i {
-            color: #2e8b57;
-            margin-top: 3px;
-            min-width: 20px;
-        }
-        
-        .detail p {
-            color: #495057;
-            line-height: 1.5;
-            margin: 0;
-        }
-        
-        .detail strong {
-            color: #1a1a2e;
-        }
-        
-        .project-cta {
-            margin-top: 20px;
-            background: #2e8b57;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background 0.3s ease;
-            text-decoration: none;
-            text-align: center;
-            align-self: flex-start;
-        }
-        
-        .project-cta:hover {
-            background: #1e6b47;
-            color: white;
-        }
-        
-        /* Carousel navigation */
-        .carousel-nav {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            z-index: 100;
-            pointer-events: auto;
-        }
-        
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .carousel-dot.active {
-            background: #2e8b57;
-        }
-        
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-hero h1 {
-                font-size: 2.2rem;
-            }
-        }
+            .gallery-hero {
+        background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(37, 122, 74, 0.8)), url('../Assets/header-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 80px 20px 60px;
+        margin-top: 70px;
+    }
+    
+    .gallery-hero h1 {
+        color: white;
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .gallery-hero p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+    }
+    
+    .gallery-title {
+        text-align: center;
+        color: #2e8b57;
+        font-size: 2rem;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .gallery-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #2e8b57;
+    }
     </style>
 </head>
 <body>
@@ -260,18 +85,17 @@
         </section>
 
         <!-- Completed Projects Section -->
-        <section class="gallery-section">
+        <section class="gallery-section project-highlights">
             <div class="container">
                 <h2 class="gallery-title">Completed Projects</h2>          
-                <div class="gallery-grid">
-                    <div class="gallery-container">
+                    <div class="gallery-grid">
     <!-- Project 1 -->
 <div class="project-card">
     <div class="project-image">
-        <div class="image-track" id="carousel1">
-            <img src="Assets/panglao2.png" alt="Panglao Oasis Living Room">
-            <img src="Assets/panglao1.png" alt="Panglao Oasis Entrance">
-            <img src="Assets/ballustrade.png" alt="Panglao Oasis View">
+        <div class="image-track" id="carousel1">    
+            <img src="Assets/gallery/panglao.png" alt="Panglao Oasis Living Room">
+            <img src="Assets/gallery/panglao1.png" alt="Panglao Oasis Entrance">
+            <img src="Assets/gallery/panglao2.png" alt="Panglao Oasis View">
         </div>
         <div class="carousel-nav">
             <div class="carousel-dot active" data-carousel="1" data-slide="0"></div>
@@ -289,7 +113,7 @@
             </div>
             <div class="detail">
                 <i class="fas fa-tools"></i>
-                <p><strong>Service:</strong> Supply & Installation of Metal Doors & Windows</p>
+                <p><strong>Supplied & Delivered:</strong> Metal Doors</p>
             </div>
             <div class="detail">
                 <i class="fas fa-calendar-alt"></i>
@@ -299,10 +123,270 @@
     </div>
 </div>
 
-<!-- dasdsadasdasdas-->
-
-
+<!--Project Card 2-->
+<div class="project-card">
+    <div class="project-image">
+        <div class="image-track" id="carousel2">
+            <img src="Assets/gallery/pedrogil .png" alt="Pedrogil Building 1">
+            <img src="Assets/gallery/pedrogil1.png" alt="Pedrogil Building 2">
+            <img src="Assets/gallery/pedrogil2.png" alt="Pedrogil Building 3">
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-carousel="2" data-slide="0"></div>
+            <div class="carousel-dot" data-carousel="2" data-slide="1"></div>
+            <div class="carousel-dot" data-carousel="2" data-slide="2"></div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>PEDRO GIL RESIDENCE</h3>
+        <p>A modern office space featuring custom roll-up shutter doors and metal louver windows for optimal ventilation and security.</p>
+        <div class="project-details">
+            <div class="detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> Metro Manila</p>
             </div>
+            <div class="detail">
+                <i class="fas fa-tools"></i>
+                <p><strong>Supplied & Delivered:</strong> Metal Doors</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-calendar-alt"></i>
+                <p><strong>Completed:</strong> June 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Project 3 -->
+<div class="project-card">
+    <div class="project-image">
+        <div class="image-track" id="carousel3">
+            <img src="Assets/gallery/uptown.png" alt="Uptown 1">
+            <img src="Assets/gallery/uptown1.png" alt="Uptown 2">
+            <img src="Assets/gallery/uptown2.png" alt="Uptown 3">
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-carousel="3" data-slide="0"></div>
+            <div class="carousel-dot" data-carousel="3" data-slide="1"></div>
+            <div class="carousel-dot" data-carousel="3" data-slide="2"></div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>ONE UPTOWN ARTS RESIDENCE</h3>
+        <p>A commercial building featuring custom roll-up shutter doors and metal louver windows for optimal ventilation and security.</p>
+        <div class="project-details">
+            <div class="detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> BGC, TAGUIG CITY</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-tools"></i>
+                <p><strong>Supplied & Delivered:</strong> Metal Doors</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-calendar-alt"></i>
+                <p><strong>Completed:</strong> September 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Project Card 4-->
+<div class="project-card">
+    <div class="project-image">
+        <div class="image-track" id="carousel4">
+            <img src="Assets/gallery/nivel.png" alt="Nivel Hills Condo 1">
+            <img src="Assets/gallery/nivel1.png" alt="Nivel Hills Condo 2">
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-carousel="4" data-slide="0"></div>
+            <div class="carousel-dot" data-carousel="4" data-slide="1"></div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>CEBU PROJECT</h3>
+        <p>A commercial building featuring custom roll-up shutter doors and metal louver windows for optimal ventilation and security.</p>
+        <div class="project-details">
+            <div class="detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> Cebu City</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-tools"></i>
+                <p><strong>Supplied & Delivered:</strong> Metal Doors</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-calendar-alt"></i>
+                <p><strong>Completed:</strong> September 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Project 5 -->
+<div class="project-card">
+    <div class="project-image">
+        <div class="image-track" id="carousel4">
+            <img src="Assets/gallery/opus.png" alt="Opus Mall 1">
+            <img src="Assets/gallery/opus1.jpg" alt="Opus Mall 2">
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-carousel="4" data-slide="0"></div>
+            <div class="carousel-dot" data-carousel="4" data-slide="1"></div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>OPUS MALL</h3>
+        <p>A commercial building featuring custom roll-up shutter doors and metal louver windows for optimal ventilation and security.</p>
+        <div class="project-details">
+            <div class="detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> Quezon City</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-tools"></i>
+                <p><strong>Supplied & Delivered:</strong> Louver Doors</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-calendar-alt"></i>
+                <p><strong>Completed:</strong> September 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Project 6 -->
+<div class="project-card">
+    <div class="project-image">
+        <div class="image-track" id="carousel5">
+            <img src="Assets/gallery/pharena2.png" alt="PH Arena View">
+            <img src="Assets/gallery/pharena5.png" alt="PH Arena Doors">
+            <img src="Assets/gallery/pharena.png" alt="PH Arena Stairs">
+            <img src="Assets/gallery/pharena1.png" alt="PH Arena Glass Ballustrade">
+            <img src="Assets/gallery/pharena3.png" alt="PH Arena Ballustrade">
+            <img src="Assets/gallery/pharena4.png" alt="PH Arena Metal Ballustrade">
+            <img src="Assets/gallery/pharena7.png" alt="PH Arena Shutter Door">
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-carousel="5" data-slide="0"></div>
+            <div class="carousel-dot" data-carousel="5" data-slide="1"></div>
+            <div class="carousel-dot" data-carousel="5" data-slide="2"></div>
+            <div class="carousel-dot" data-carousel="5" data-slide="3"></div>
+            <div class="carousel-dot" data-carousel="5" data-slide="4"></div>
+            <div class="carousel-dot" data-carousel="5" data-slide="5"></div>
+            <div class="carousel-dot" data-carousel="5" data-slide="6"></div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>PHILIPPINE ARENA</h3>
+        <p>A commercial building featuring custom roll-up shutter doors and metal louver windows for optimal ventilation and security.</p>
+        <div class="project-details">
+            <div class="detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> Bocaue, Bulacan</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-tools"></i>
+                <p><strong>Supplied & Delivered:</strong> Metal Doors, RUD, SS Glass Windows, SS Glass Doors, Fire Exit Railings, & SS Railings</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-calendar-alt"></i>
+                <p><strong>Completed:</strong> September 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!---Project 7--->
+<div class="project-card">
+    <div class="project-image">
+        <div class="image-track" id="carousel4">
+            <img src="Assets/gallery/bangkosentral.png" alt="Bangko Sentral 1">
+            <img src="Assets/gallery/bangkosentral1.png" alt="Bangko Sentral 2">
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-carousel="4" data-slide="0"></div>
+            <div class="carousel-dot" data-carousel="4" data-slide="1"></div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>OPUS MALL</h3>
+        <p>A commercial building featuring custom roll-up shutter doors and metal louver windows for optimal ventilation and security.</p>
+        <div class="project-details">
+            <div class="detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> East Avenue, Quezon City, Metro Manila</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-tools"></i>
+                <p><strong>Service:</strong> Metal Door, Roll-up Door, Stainless Glass Windows, Stainless Glass Doors, Fire Exit Railings, & Stainless Glass Railings.</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-calendar-alt"></i>
+                <p><strong>Completed:</strong> September 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!---Project 8--->
+<div class="project-card">
+    <div class="project-image">
+        <div class="image-track" id="carousel5">
+            <img src="Assets/gallery/tipcubao.png" alt="TIP Cubao Entrance">
+            <img src="Assets/gallery/tipcubao1.png" alt="TIP Cubao Shutter Door">
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-carousel="5" data-slide="0"></div>
+            <div class="carousel-dot" data-carousel="5" data-slide="1"></div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>TIP CUBAO</h3>
+        <p>A commercial building featuring custom roll-up shutter doors and metal louver windows for optimal ventilation and security.</p>
+        <div class="project-details">
+            <div class="detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> Quezon City</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-tools"></i>
+                <p><strong>Service:</strong> Installation of Polycarbonate Roll-up Door</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-calendar-alt"></i>
+                <p><strong>Completed:</strong> September 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!---Project 9--->
+<div class="project-card">
+    <div class="project-image">
+        <div class="image-track" id="carousel6">
+            <img src="Assets/gallery/ivyhotel.png" alt="Ivy Hotel 1">
+            <img src="Assets/gallery/ivyhotel1.png" alt="Ivy Hotel 2">
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-carousel="6" data-slide="0"></div>
+            <div class="carousel-dot" data-carousel="6" data-slide="1"></div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3>THE IVY WALL HOTEL</h3>
+        <p>A commercial building featuring custom roll-up shutter doors and metal louver windows for optimal ventilation and security.</p>
+        <div class="project-details">
+            <div class="detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> Puerto Prinsesa, Palawan</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-tools"></i>
+                <p><strong>Service:</strong> Acoustic transformer louver door with Aluminum aesthetic design used BI Pipe Accu enclosure & Metal sunshade windows.</p>
+            </div>
+            <div class="detail">
+                <i class="fas fa-calendar-alt"></i>
+                <p><strong>Completed:</strong> September 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+
         </section>
     </main>
 
@@ -314,7 +398,7 @@
                     <a class="logo">
                         <img src="Assets/logo.png" alt="logo" style="height: 50px; width: auto; margin-right: 10px;">
                         <div class="logo-text">
-                            <span class="logo-main">FILIPINAS <element style="color:#c9fea9;">ASIA</element>SHUTTER DOOR CORPORATION</span>
+                            <span class="logo-main">FILIPINAS <span class="outlined-text">ASIA</span> SHUTTER DOOR CORPORATION</span>
                         </div>
                     </a>
                     <p>Manufacturing quality industrial and commercial doors in the Philippines since 1990.</p>
@@ -356,105 +440,5 @@
     </footer>
 
     <script src="main.js"></script>
-    <script>
-        // Image carousel functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all carousels
-            const carousels = document.querySelectorAll('.image-track');
-            
-            carousels.forEach((carousel, carouselIndex) => {
-                const carouselId = carouselIndex + 1;
-                const dots = document.querySelectorAll(`.carousel-dot[data-carousel="${carouselId}"]`);
-                const images = Array.from(carousel.querySelectorAll('img'));
-                let currentSlide = 0;
-                const totalSlides = images.length;
-
-                // Helper to size track and images using pixel widths to avoid percentage rounding issues
-                function sizeCarousel() {
-                    const trackContainer = carousel.parentElement; // .project-image
-                    const visibleWidth = trackContainer.getBoundingClientRect().width;
-
-                    console.log(`Carousel ${carouselId}: visibleWidth=${visibleWidth}, totalSlides=${totalSlides}, currentSlide=${currentSlide}`);
-                    
-                    // Set track width in pixels to hold all slides side-by-side
-                    carousel.style.width = (visibleWidth * totalSlides) + 'px';
-
-                    // Size each image to the visible width
-                    images.forEach((img, idx) => {
-                        img.style.display = 'block';
-                        img.style.width = visibleWidth + 'px';
-                        img.style.flexShrink = '0';
-                        img.style.height = '100%';
-                        img.style.objectFit = 'cover';
-                        img.style.objectPosition = 'center center';
-                        console.log(`Image ${idx}: ${img.src}`);
-                    });
-
-                    // Move to the current slide (recalculate transform)
-                    const translateX = currentSlide * visibleWidth;
-                    carousel.style.transform = `translateX(-${translateX}px)`;
-                    console.log(`Transform: translateX(-${translateX}px)`);
-                }
-
-                // Function to update active dot
-                function updateDots() {
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentSlide);
-                    });
-                }
-
-                // Wait for all images to load before initial sizing
-                const imageLoadPromises = images.map(img => {
-                    return new Promise((resolve) => {
-                        if (img.complete) {
-                            resolve();
-                        } else {
-                            img.addEventListener('load', resolve);
-                            img.addEventListener('error', () => {
-                                // Fallback on load error
-                                img.src = 'Assets/header-bg.jpg';
-                                img.addEventListener('load', resolve);
-                            });
-                        }
-                    });
-                });
-
-                Promise.all(imageLoadPromises).then(() => {
-                    // All images loaded - now size carousel
-                    sizeCarousel();
-                    updateDots();
-                    console.log(`Carousel ${carouselId} initialized with ${totalSlides} slides`);
-                    
-                    // Recalc on window resize
-                    window.addEventListener('resize', () => {
-                        sizeCarousel();
-                    });
-
-                    // Click events for dots
-                    dots.forEach((dot, index) => {
-                        dot.addEventListener('click', () => {
-                            currentSlide = index;
-                            sizeCarousel();
-                            updateDots();
-                        });
-                    });
-
-                    // Auto-rotate carousel after 8 seconds initial delay
-                    setTimeout(() => {
-                        console.log(`Carousel ${carouselId} auto-rotate starting`);
-                        setInterval(() => {
-                            currentSlide = (currentSlide + 1) % totalSlides;
-                            sizeCarousel();
-                            updateDots();
-                            console.log(`Carousel ${carouselId} rotated to slide ${currentSlide}`);
-                        }, 5000);
-                    }, 8000);
-                });
-            });
-            
-            // Update current year in footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-        });
-    </script>
 </body>
 </html>

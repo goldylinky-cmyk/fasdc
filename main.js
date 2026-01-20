@@ -145,8 +145,6 @@ if (window.location.hash) {
     const quoteForm = document.getElementById('quoteForm');
     if (quoteForm) {
         quoteForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             const inputs = this.querySelectorAll('input[required], select[required], textarea[required]');
             let isValid = true;
             
@@ -173,9 +171,8 @@ if (window.location.hash) {
                 }
             });
             
-            if (isValid) {
-                alert('Thank you for your quote request! We will contact you within 24 hours.');
-                quoteForm.reset();
+            if (!isValid) {
+                e.preventDefault();
             }
         });
     }

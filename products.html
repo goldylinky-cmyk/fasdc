@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products | Filipinas Asia Shutter Door Corporation</title>
+    <title>Our Products | Fil Shutter</title>
+        <link rel="icon" type="image/png" href="Assets/FASDC logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .product-hero {
-            background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(37, 122, 74, 0.8)), url('../Assets/header-bg.jpg');
+            background: linear-gradient(rgb(46, 139, 87, 1), rgb(30, 107, 71, 0.9)), url('../Assets/header-bg.jpg');
             background-size: cover;
             background-position: center;
             color: rgb(255, 255, 255);
@@ -94,16 +95,57 @@
             object-fit: cover;
         }
         
-        .image-placeholder {
-            color: #6c757d;
-            text-align: center;
-            padding: 20px;
+        .insulation-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
         
-        .image-placeholder i {
-            font-size: 4rem;
-            color: #adb5bd;
-            margin-bottom: 15px;
+        .insulation-card {
+            flex: 1;
+            min-width: 200px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            transition: border-color 0.3s ease;
+        }
+        
+        .insulation-card:hover {
+            border-color: #2e8b57;
+        }
+        
+        .insulation-card h4 {
+            color: #2e8b57;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .insulation-icon {
+            font-size: 1.2rem;
+            color: #28a745;
+        }
+        
+        .insulation-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+        
+        .insulation-features li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .insulation-features i {
+            color: #28a745;
+            font-size: 0.8rem;
         }
         
         .product-content {
@@ -164,6 +206,25 @@
             color: white;
         }
         
+        .ul-certified {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .ul-certified h3 {
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+        
+        .ul-logo {
+            font-size: 3rem;
+            color: #d32f2f;
+            margin-bottom: 15px;
+        }
+        
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: 1fr;
@@ -171,6 +232,107 @@
             
             .product-hero h1 {
                 font-size: 2.2rem;
+            }
+            
+            .insulation-options {
+                flex-direction: column;
+            }
+            .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+           }
+        .certification-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certification-logo {
+            height: 80px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .certification-logo img {
+            max-height: 80px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .certification-logo-placeholder {
+            font-size: 3rem;
+            color: #2e8b57;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .certification-card h4 {
+            color: #2e8b57;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .certification-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .certifications-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .certifications-info h4 {
+            color: #2e8b57;
+            margin-bottom: 15px;
+        }
+        
+        .certifications-info ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .certifications-info li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .certifications-info i {
+            color: #28a745;
+        }
+        
+        @media (max-width: 768px) {
+            .certifications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            .certification-card {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -212,22 +374,22 @@
         <!-- Roll-Up Doors Category -->
         <section class="product-category">
             <div class="container">
-                <h2 class="category-title">Roll-Up Doors & Grilles</h2>
+                <h2 class="category-title">Roll-Up Doors</h2>
                 
                 <div class="products-grid">
                     <!-- Roll-Up Shutter Doors -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="Assets/shutter.png" alt="Shutter Door">
+                            <img src="Assets/products/shutter.png" alt="Shutter Door">
                         </div>
                         <div class="product-content">
                             <h3>Roll-Up Shutter Doors</h3>
-                            <p>FAS Roll-Up Doors are made from galvanized aluminum curts designed to give you maximum security and durability. Customized to save space and reduce weight, FAS Roll-Up Doors are suited for residential, industrial and commercial purposes. Guaranteed superior quality and strength</p>
+                            <p>FAS Roll-Up Doors are made from galvalume aluminum curtains designed to give you maximum security and durability. Customized to save space and reduce weight, these doors are perfect for residential, industrial, and commercial applications. Guaranteed superior quality and strength with smooth operation.</p>
                             <ul class="product-features">
-                                <li><i class="fas fa-check"></i> Galvanized aluminum construction</li>
-                                <li><i class="fas fa-check"></i> Space-saving design</li>
-                                <li><i class="fas fa-check"></i> Lightweight yet durable</li>
-                                <li><i class="fas fa-check"></i> Residential, industrial & commercial use</li>
+                                <li><i class="fas fa-check"></i> Galvalume aluminum construction</li>
+                                <li><i class="fas fa-check"></i> Space-saving vertical operation</li>
+                                <li><i class="fas fa-check"></i> Lightweight yet extremely durable</li>
+                                <li><i class="fas fa-check"></i> Multi-purpose use</li>
                             </ul>
                             <a href="contact.html#quote" class="product-cta">
                                 <i class="fas fa-file-quote"></i> Request Quote
@@ -238,16 +400,16 @@
                     <!-- Roll-Up Grilles -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="Assets/shutter2.png" alt="Roll-Up Grilles">
+                            <img src="Assets/products/shutter2.png" alt="Roll-Up Grilles">
                         </div>
                         <div class="product-content">
                             <h3>Roll-Up Grilles</h3>
-                            <p>Our grilles are made with beautifully designed tubes and links of high quality. The grilles provide efficient air circulation, with an excellent finish for maximum view from the outside.</p>
+                            <p>Our premium roll-up grilles feature beautifully designed tubes and links made from high-quality materials. These grilles provide excellent air circulation while maintaining security, with an elegant finish that offers maximum visibility from both inside and outside.</p>
                             <ul class="product-features">
-                                <li><i class="fas fa-check"></i> High-quality tubes and links</li>
-                                <li><i class="fas fa-check"></i> Excellent air circulation</li>
-                                <li><i class="fas fa-check"></i> Maximum visibility</li>
-                                <li><i class="fas fa-check"></i> Premium finish</li>
+                                <li><i class="fas fa-check"></i> High-quality steel/aluminum tubes</li>
+                                <li><i class="fas fa-check"></i> Excellent ventilation & visibility</li>
+                                <li><i class="fas fa-check"></i> Secure locking mechanisms</li>
+                                <li><i class="fas fa-check"></i> Powder-coated premium finish</li>
                             </ul>
                             <a href="contact.html#quote" class="product-cta">
                                 <i class="fas fa-file-quote"></i> Request Quote
@@ -258,16 +420,16 @@
                     <!-- Polycarbonate Roll-Up -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="Assets/shutter3.png" alt="Polycarbonate Roll-Up Shutter">
+                            <img src="Assets/products/shutter3.png" alt="Polycarbonate Roll-Up Shutter">
                         </div>
                         <div class="product-content">
                             <h3>Polycarbonate Roll-Up Shutter</h3>
-                            <p>Strong as steel, clear as glass. Our FAS Polycarbonate Roll-Up Shutter Doors feature clear transparency to provide high visibility for many years.</p>
+                            <p>Experience the perfect combination of strength and clarity. Our polycarbonate roll-up shutters offer steel-like durability with glass-like transparency, providing high visibility and natural light transmission while maintaining excellent security for years of reliable service.</p>
                             <ul class="product-features">
-                                <li><i class="fas fa-check"></i> Steel-like strength</li>
-                                <li><i class="fas fa-check"></i> Glass-like clarity</li>
-                                <li><i class="fas fa-check"></i> Long-lasting transparency</li>
-                                <li><i class="fas fa-check"></i> High visibility design</li>
+                                <li><i class="fas fa-check"></i> Impact-resistant polycarbonate</li>
+                                <li><i class="fas fa-check"></i> 90% light transmission</li>
+                                <li><i class="fas fa-check"></i> UV-protected for long life</li>
+                                <li><i class="fas fa-check"></i> Scratch-resistant surface</li>
                             </ul>
                             <a href="contact.html#quote" class="product-cta">
                                 <i class="fas fa-file-quote"></i> Request Quote
@@ -278,16 +440,16 @@
                     <!-- Noiseless Roll-Up -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="Assets/noiseless.jpg" alt="Noiseless Roll-Up Shutter">
+                            <img src="Assets/products/noiseless.png" alt="Noiseless Roll-Up Shutter">
                         </div>
                         <div class="product-content">
                             <h3>Noiseless Roll-Up Shutter</h3>
-                            <p>Stability, strength, and elegance, rolled into one. Features soft start and soft stop for smoother operation. Covered with rubber end locks on both ends for smoother shutter motion.</p>
+                            <p>Our premium noiseless shutters combine stability, strength, and elegance with whisper-quiet operation. Featuring soft start/stop technology and rubber end locks for smoother, quieter motion - perfect for residential areas, hospitals, offices, and noise-sensitive environments.</p>
                             <ul class="product-features">
-                                <li><i class="fas fa-check"></i> Quiet operation</li>
-                                <li><i class="fas fa-check"></i> Soft start & stop</li>
-                                <li><i class="fas fa-check"></i> Rubber end locks</li>
-                                <li><i class="fas fa-check"></i> Smooth motion</li>
+                                <li><i class="fas fa-check"></i> Whisper-quiet operation</li>
+                                <li><i class="fas fa-check"></i> Soft start & stop technology</li>
+                                <li><i class="fas fa-check"></i> Rubber-cushioned end locks</li>
+                                <li><i class="fas fa-check"></i> Vibration-dampening system</li>
                             </ul>
                             <a href="contact.html#quote" class="product-cta">
                                 <i class="fas fa-file-quote"></i> Request Quote
@@ -299,72 +461,24 @@
         </section>
 
         <!-- Metal Doors Category -->
-        <section class="product-category" style="background: #f8f9fa;">
-            <div class="container">
-                <h2 class="category-title">Metal & Security Doors</h2>
-                
-                <div class="products-grid">
-                    <!-- Metal Door -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="Assets/metaldoor3.png" alt="Metal Door">
-                        </div>
-                        <div class="product-content">
-                            <h3>Metal Door</h3>
-                            <p>Both soundproof and fire-resistant, made from galvanized metal on high quality carbon-steel sheets with your choice of honeycomb, fiberglass or rock wool insulation. Guarantees superior durability, safety, and security.</p>
-                            <ul class="product-features">
-                                <li><i class="fas fa-check"></i> Soundproof & fire-resistant</li>
-                                <li><i class="fas fa-check"></i> Galvanized metal construction</li>
-                                <li><i class="fas fa-check"></i> Multiple insulation options</li>
-                                <li><i class="fas fa-check"></i> Carbon-steel reinforcement</li>
-                            </ul>
-                            <a href="contact.html#quote" class="product-cta">
-                                <i class="fas fa-file-quote"></i> Request Quote
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Bulletproof Door -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="Assets/bulletproofdoor.png" alt="Bulletproof Door">
-                        </div>
-                        <div class="product-content">
-                            <h3>Bulletproof Door</h3>
-                            <p>Designed as the ultimate high security screen, fully or partially glazed. Comes in flexible dimensions that can extend from an existing floor level to the underside of an existing ceiling height.</p>
-                            <ul class="product-features">
-                                <li><i class="fas fa-check"></i> Ultimate security protection</li>
-                                <li><i class="fas fa-check"></i> Fully or partially glazed</li>
-                                <li><i class="fas fa-check"></i> Flexible dimensions</li>
-                                <li><i class="fas fa-check"></i> Custom height options</li>
-                            </ul>
-                            <a href="contact.html#quote" class="product-cta">
-                                <i class="fas fa-file-quote"></i> Request Quote
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Louver & Glass Category -->
         <section class="product-category">
             <div class="container">
-                <h2 class="category-title">Louver Doors & Glass Solutions</h2>
+                <h2 class="category-title">Metal Doors</h2>
                 
                 <div class="products-grid">
+                    <!-- Plain Metal Door -->
                     <div class="product-card">
                         <div class="product-image">
-                                <img src="Assets/louvers.png" alt="Louver Door">
+                            <img src="Assets/products/metal door plain type.jpg" alt="Metal Door - Plain Type">
                         </div>
                         <div class="product-content">
-                            <h3>Metal Louver Doors & Windows</h3>
-                            <p>FAS Louver Doors and Windows are designed for durability, safety and maximum airflow. Perfect for areas requiring ventilation without compromising security.</p>
+                            <h3>Plain Type Metal Door</h3>
+                            <p>Our classic plain metal doors offer clean, minimalist design with maximum security. Constructed from high-grade steel with reinforced frames, these doors provide excellent durability and protection for both residential and commercial applications.</p>
                             <ul class="product-features">
-                                <li><i class="fas fa-check"></i> Maximum airflow design</li>
-                                <li><i class="fas fa-check"></i> Durable metal construction</li>
-                                <li><i class="fas fa-check"></i> Enhanced security features</li>
-                                <li><i class="fas fa-check"></i> Weather-resistant</li>
+                                <li><i class="fas fa-check"></i> High-grade steel construction</li>
+                                <li><i class="fas fa-check"></i> Reinforced door frame</li>
+                                <li><i class="fas fa-check"></i> Multiple locking points</li>
+                                <li><i class="fas fa-check"></i> Weather-resistant finish</li>
                             </ul>
                             <a href="contact.html#quote" class="product-cta">
                                 <i class="fas fa-file-quote"></i> Request Quote
@@ -372,19 +486,139 @@
                         </div>
                     </div>
                     
-                    <!-- Window -->
+                    <!-- With Half Louvers -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="Assets/louvers1.png" alt="Louvers Window">
+                            <img src="Assets/products/metal door half louvers.jpg" alt="Half Louvers Metal Door">
                         </div>
                         <div class="product-content">
-                            <h3>Glass Doors & Windows</h3>
-                            <p>Aside from allowing an enormous amount of natural light, it also provides high visibility and clarity to bring brightness and beauty into any space.</p>
+                            <h3>Half Louvers Metal Door</h3>
+                            <p>Combine security with ventilation in our half-louver metal doors. The upper louver section allows for excellent air circulation while maintaining privacy and security, making them ideal for utility rooms, storage areas, and spaces requiring airflow.</p>
                             <ul class="product-features">
-                                <li><i class="fas fa-check"></i> Maximum natural light</li>
-                                <li><i class="fas fa-check"></i> High visibility & clarity</li>
-                                <li><i class="fas fa-check"></i> Aesthetic appeal</li>
-                                <li><i class="fas fa-check"></i> Space brightening</li>
+                                <li><i class="fas fa-check"></i> 50% louver area for ventilation</li>
+                                <li><i class="fas fa-check"></i> Adjustable louver angles</li>
+                                <li><i class="fas fa-check"></i> Insect screen integration option</li>
+                                <li><i class="fas fa-check"></i> Maintains privacy & security</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- With Bottom Louvers -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/Bottom Louver.png" alt="Bottom Louvers">
+                        </div>
+                        <div class="product-content">
+                            <h3>Bottom Louvers Metal Door</h3>
+                            <p>Our bottom louver doors provide discreet ventilation at floor level, perfect for maintaining air circulation while maximizing security. Excellent for server rooms, equipment areas, and spaces where low-level airflow is preferred.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Low-level ventilation</li>
+                                <li><i class="fas fa-check"></i> Maximum security design</li>
+                                <li><i class="fas fa-check"></i> Damp-proof construction</li>
+                                <li><i class="fas fa-check"></i> Pest-resistant louver design</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- With Narrowlite Viewing Glass -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/Narrow Lite.png" alt="Narrowlite Viewing Glass">
+                        </div>
+                        <div class="product-content">
+                            <h3>Narrowlite Viewing Glass Door</h3>
+                            <p>Enhance security with visibility. Our narrowlite glass doors feature reinforced tempered glass viewports that allow visual identification without compromising door strength. Perfect for security doors, offices, and controlled access areas.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Tempered safety glass</li>
+                                <li><i class="fas fa-check"></i> Reinforced glass frame</li>
+                                <li><i class="fas fa-check"></i> Visual identification capability</li>
+                                <li><i class="fas fa-check"></i> Maintains full security rating</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Half Viewing Glass -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/Half Viewing Glass.png" alt="Half Viewing Glass">
+                        </div>
+                        <div class="product-content">
+                            <h3>Half Viewing Glass Door</h3>
+                            <p>Our half glass metal doors combine the durability of steel with the visibility of glass. The upper half features shatter-resistant glass for natural light and visibility, while the lower half provides solid security - perfect for main entrances and office doors.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 50% viewing area</li>
+                                <li><i class="fas fa-check"></i> Laminated safety glass</li>
+                                <li><i class="fas fa-check"></i> Natural light enhancement</li>
+                                <li><i class="fas fa-check"></i> Professional appearance</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Half Viewing Glass Half Louver -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/Halfview Halflouvers.png" alt="Half View Glass and Louver">
+                        </div>
+                        <div class="product-content">
+                            <h3>Half Glass & Half Louver Door</h3>
+                            <p>The ultimate combination door featuring glass for visibility, louvers for ventilation, and solid metal for security. This versatile design is perfect for mechanical rooms, storage areas, and spaces requiring multiple functions.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Triple-function design</li>
+                                <li><i class="fas fa-check"></i> Maximum versatility</li>
+                                <li><i class="fas fa-check"></i> Customizable sections</li>
+                                <li><i class="fas fa-check"></i> Ideal for utility areas</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Narrowlite Bottom Louver -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/Narrowlite Bottom Louver.png" alt="Narrowlite Bottom Louver">
+                        </div>
+                        <div class="product-content">
+                            <h3>Narrowlite & Bottom Louver Door</h3>
+                            <p>A sophisticated security door combining narrow viewing glass for identification with bottom louvers for ventilation. This design provides maximum functionality for security-conscious areas requiring airflow.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Viewing + ventilation combo</li>
+                                <li><i class="fas fa-check"></i> High-security construction</li>
+                                <li><i class="fas fa-check"></i> Discreet airflow design</li>
+                                <li><i class="fas fa-check"></i> Professional security solution</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Fully Louver Door -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/Fully Louver.png" alt="Fully Louver Door">
+                        </div>
+                        <div class="product-content">
+                            <h3>Fully Louvered Metal Door</h3>
+                            <p>Maximum ventilation meets maximum security. Our fully louvered doors provide excellent airflow while maintaining structural integrity and security. Perfect for equipment rooms, electrical closets, and any area requiring complete ventilation.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 80-90% ventilation area</li>
+                                <li><i class="fas fa-check"></i> Reinforced louver design</li>
+                                <li><i class="fas fa-check"></i> Optional insect screens</li>
+                                <li><i class="fas fa-check"></i> Industrial-grade construction</li>
                             </ul>
                             <a href="contact.html#quote" class="product-cta">
                                 <i class="fas fa-file-quote"></i> Request Quote
@@ -395,24 +629,210 @@
             </div>
         </section>
 
-        <!-- Balustrade Category -->
+        <!-- INSULATION OPTIONS SECTION -->
         <section class="product-category" style="background: #f8f9fa;">
+            <div class="container">
+                <h2 class="category-title">Door Insulation Options</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #495057;">
+                    Enhance your doors' performance with our premium insulation options. Choose between honeycomb paper core for basic insulation or rockwool mineral wool for superior thermal and acoustic performance.
+                </p>
+                
+                <div class="insulation-options">
+                    <div class="insulation-card">
+                        <h4><i class="fa-brands fa-hive"></i> Honeycomb Paper Core</h4>
+                        <p>Cost-effective insulation with good thermal properties and lightweight structure.</p>
+                        <ul class="insulation-features">
+                            <li><i class="fas fa-check-circle"></i> Lightweight & economical</li>
+                            <li><i class="fas fa-check-circle"></i> Good thermal resistance</li>
+                            <li><i class="fas fa-check-circle"></i> Eco-friendly paper material</li>
+                            <li><i class="fas fa-check-circle"></i> Easy to install</li>
+                            <li><i class="fas fa-check-circle"></i> Basic sound dampening</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="insulation-card">
+                        <h4><i class="fas fa-mountain insulation-icon"></i> Rockwool Mineral Wool</h4>
+                        <p>Premium insulation offering superior thermal, acoustic, and fire-resistant properties.</p>
+                        <ul class="insulation-features">
+                            <li><i class="fas fa-check-circle"></i> Excellent thermal insulation</li>
+                            <li><i class="fas fa-check-circle"></i> Superior sound absorption</li>
+                            <li><i class="fas fa-check-circle"></i> Fire-resistant (up to 1000°C)</li>
+                            <li><i class="fas fa-check-circle"></i> Moisture resistant</li>
+                            <li><i class="fas fa-check-circle"></i> Non-combustible material</li>
+                            <li><i class="fas fa-check-circle"></i> Pest & mold resistant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Louver Windows category -->
+                 <section class="product-category">
+            <div class="container">
+                <h2 class="category-title">Louver Windows</h2>
+                
+                <div class="products-grid">
+                    <!-- Acoustic Louver -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/Acoustic louver.png" alt="Acoustic Louver Window">
+                        </div>
+                        <div class="product-content">
+                            <h3>Acoustic Louver</h3>
+                            <p>Specialized acoustic louvers designed to provide optimal ventilation while significantly reducing noise transmission. Perfect for buildings near busy roads, airports, or industrial areas where noise control is essential without compromising airflow.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Noise reduction up to 40dB</li>
+                                <li><i class="fas fa-check"></i> Maintains excellent airflow</li>
+                                <li><i class="fas fa-check"></i> Weather-resistant construction</li>
+                                <li><i class="fas fa-check"></i> Custom sizes available</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Z Type Louver -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/louvers3.png" alt="Z Type Louver Window">
+                        </div>
+                        <div class="product-content">
+                            <h3>Z Type Louver</h3>
+                            <p>Heavy-duty Z-shaped louver blades designed for maximum strength and weather protection. These louvers feature a unique blade profile that provides excellent water shedding while maintaining optimal airflow for industrial and commercial applications.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Z - shaped blade profile for strength</li>
+                                <li><i class="fas fa-check"></i> Superior water shedding capability</li>
+                                <li><i class="fas fa-check"></i> High airflow efficiency</li>
+                                <li><i class="fas fa-check"></i> Durable construction</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Storm Type Louver -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/Storm Type Louvers.png" alt="Storm Type Louver Window">
+                        </div>
+                        <div class="product-content">
+                            <h3>Storm Type Louver</h3>
+                            <p>Heavy-duty storm-resistant louvers designed to withstand extreme weather conditions. These louvers provide maximum protection against rain, wind, and debris while maintaining necessary ventilation for building systems.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Storm and hurricane resistant</li>
+                                <li><i class="fas fa-check"></i> High-velocity wind protection</li>
+                                <li><i class="fas fa-check"></i> Debris-resistant design</li>
+                                <li><i class="fas fa-check"></i> Heavy-gauge construction</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architectural Elements -->
+                 <section class="product-category">
             <div class="container">
                 <h2 class="category-title">Architectural Elements</h2>
                 
                 <div class="products-grid">
+                    <!-- Ballustrade -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="Assets/ballustrade.png" alt="Balustrade">
+                            <img src="Assets/products/ballustrade.png" alt="Ballustrade">
                         </div>
                         <div class="product-content">
-                            <h3>FAS Balustrade</h3>
-                            <p>More resistant to corrosion & rust than ordinary steel. FAS Balustrades are well-built, durable, and can be bent into different shapes to form any architectural designs for your home or business.</p>
+                            <h3>Ballustrade</h3>
+                            <p>Custom-designed balustrades and railings that combine safety with elegant design. Our ballustrades are engineered for structural integrity while providing architectural appeal for staircases, balconies, and terraces.</p>
                             <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Custom design and fabrication</li>
+                                <li><i class="fas fa-check"></i> Structural construction</li>
+                                <li><i class="fas fa-check"></i> Stainless finish</li>
+                                <li><i class="fas fa-check"></i> Compliance with safety codes</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Railing Strainless -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/railings-stainless.png" alt="Stainless Railings">
+                        </div>
+                        <div class="product-content">
+                            <h3>Railing Stainless</h3>
+                            <p>Premium stainless steel railings offering superior corrosion resistance and modern aesthetics. Perfect for coastal areas, commercial buildings, and locations requiring low-maintenance, durable railing solutions.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 304/316 stainless steel</li>
                                 <li><i class="fas fa-check"></i> Superior corrosion resistance</li>
-                                <li><i class="fas fa-check"></i> Custom bendable shapes</li>
-                                <li><i class="fas fa-check"></i> Architectural flexibility</li>
-                                <li><i class="fas fa-check"></i> Residential & commercial use</li>
+                                <li><i class="fas fa-check"></i> Modern, clean appearance</li>
+                                <li><i class="fas fa-check"></i> Low maintenance requirements</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Railing Glass -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/railing-glass.png" alt="Glass Railings">
+                        </div>
+                        <div class="product-content">
+                            <h3>Railing Glass</h3>
+                            <p>Modern glass railing systems that provide safety without obstructing views. These railings use tempered or laminated safety glass with minimal stainless steel framing for a sleek, contemporary look.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Tempered safety glass</li>
+                                <li><i class="fas fa-check"></i> Frameless or minimal framing</li>
+                                <li><i class="fas fa-check"></i> Maximum visibility</li>
+                                <li><i class="fas fa-check"></i> Easy to clean and maintain</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- ACP Cladding -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/ACP Cladding.png" alt="ACP CLadding">
+                        </div>
+                        <div class="product-content">
+                            <h3>ACP Cladding</h3>
+                            <p>Aluminum Composite Panel (ACP) cladding systems for modern building facades. These panels provide excellent thermal insulation, weather protection, and contemporary aesthetics with various color and finish options.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Various colors and finishes</li>
+                                <li><i class="fas fa-check"></i> Thermal insulation properties</li>
+                                <li><i class="fas fa-check"></i> Weather and UV resistant</li>
+                                <li><i class="fas fa-check"></i> Lightweight and durable</li>
+                            </ul>
+                            <a href="contact.html#quote" class="product-cta">
+                                <i class="fas fa-file-quote"></i> Request Quote
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Sliding/Swing Gate-->
+                     <div class="product-card">
+                        <div class="product-image">
+                            <img src="Assets/products/gate.png" alt="Sliding/Swing Gate">
+                        </div>
+                        <div class="product-content">
+                            <h3>Sliding/Swing Gate</h3>
+                            <p>Custom-designed security gates available in sliding or swing configurations. These gates combine security with aesthetic appeal and can be automated for convenient access control.</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Custom sizes and designs</li>
+                                <li><i class="fas fa-check"></i> Manual or automated operation</li>
+                                <li><i class="fas fa-check"></i> Various material options</li>
+                                <li><i class="fas fa-check"></i> Security locking systems</li>
                             </ul>
                             <a href="contact.html#quote" class="product-cta">
                                 <i class="fas fa-file-quote"></i> Request Quote
@@ -422,13 +842,75 @@
                 </div>
             </div>
         </section>
+        <!-- UL Listed Section -->
+    <section class="product-category">
+        <div class="container">
+            <h2 class="category-title">Certifications & Standards</h2>
+            
+            <div class="certifications-grid">
+                <!-- UL Listed -->
+                <div class="certification-card">
+                    <div class="certification-logo">
+                        <img src="Assets/UL Certified Logo.png" alt="UL Listed"> 
+                    </div>
+                    <h4>UL Listed</h4>
+                    <p>Underwriters Laboratories certified fire-rated steel doors meeting international safety standards.</p>
+                </div>
+                
+                <!-- TUV -->
+                <div class="certification-card">
+                    <div class="certification-logo">
+                        <img src="Assets/TUV Logo.png" alt="TUV Certified"> 
+                    </div>
+                    <h4>TÜV Certified</h4>
+                    <p>TÜV Rheinland quality management system certification for consistent product quality and safety.</p>
+                </div>
+                
+                <!-- PCAB -->
+                <div class="certification-card">
+                    <div class="certification-logo">
+                      <img src="Assets/PCAB Logo.png" alt="PCAB Licensed"> 
+                    </div>
+                    <h4>PCAB Licensed</h4>
+                    <p>Philippine Contractors Accreditation Board licensed contractor for construction and installation services.</p>
+                </div>
+                
+                <!-- PHILGEPS -->
+                <div class="certification-card">
+                    <div class="certification-logo">
+                      <img src="Assets/PHILGEPS Logo.png" alt="PHILGEPS Registered">
+                    </div>
+                    <h4>PHILGEPS Registered</h4>
+                    <p>Philippine Government Electronic Procurement System registered supplier eligible for government projects.</p>
+                </div>
+            </div>
+            
+            <div class="certifications-info">
+                <h4>What Our Certifications Mean for You</h4>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> <strong>Guaranteed Quality:</strong> Third-party verified product standards</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Safety Compliance:</strong> Meets national and international safety regulations</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Government Eligibility:</strong> Qualified for public and private sector projects</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Reliable Performance:</strong> Tested and proven door solutions</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Professional Installation:</strong> Licensed contractor workmanship</li>
+                </ul>
+                
+                <div style="margin-top: 25px; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid #2e8b57;">
+                    <p style="color: #495057; margin: 0;">
+                        <i class="fas fa-info-circle" style="color: #2e8b57; margin-right: 8px;"></i>
+                        <strong>Note:</strong> Certificate copies and specific product listings are available upon request. Contact our sales team for detailed certification documentation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
         <!-- CTA Section -->
         <section style="background: #2e8b57; color: white; padding: 60px 0; text-align: center;">
             <div class="container">
                 <h2 style="color: white; margin-bottom: 20px;">Need Custom Solutions?</h2>
                 <p style="color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto 30px;">
-                    All our products can be customized to your specific requirements. Contact us for tailored solutions.
+                    All our products can be customized to your specific requirements. Contact us for tailored solutions including size modifications, insulation options, finishes, and special configurations.
                 </p>
                 <a href="contact.html" class="btn" style="background: white; color: #2e8b57; padding: 15px 40px; font-size: 1.1rem;">
                     <i class="fas fa-phone-alt"></i> Contact Our Sales Team
@@ -447,7 +929,7 @@
                         <div class="logo-text">
                             <span class="logo-main">FILIPINAS <span class="outlined-text">ASIA</span> SHUTTER DOOR CORPORATION</span>
                         </div>
-                        </a>Manufacturing quality industrial and commercial doors in the Philippines since 1990.</p>
+                        </a>Manufacturing quality industrial and commercial doors in the Philippines since 1973.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -487,4 +969,4 @@
 
     <script src="main.js"></script>
 </body>
-</html>
+</html> 

@@ -48,6 +48,11 @@ a {
     transition: all 0.3s ease;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 ul {
     list-style: none;
 }
@@ -1167,6 +1172,19 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .hero .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
     .page-header {
         padding: 80px 0 40px;
     }
@@ -1186,6 +1204,10 @@ ul {
 }
 
 @media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    
     .mission-grid,
     .advantages-grid,
     .services-grid,
@@ -1352,6 +1374,29 @@ a:hover {
 .products-grid:has(> *:only-child) .product-card {
     max-width: 350px;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .insulation-options {
+        flex-direction: column;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .certification-card {
+        padding: 20px 15px;
+    }
 }
 
 .outlined-text {
